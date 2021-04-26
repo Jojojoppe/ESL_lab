@@ -1,0 +1,15 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity esl_demonstrator_testbench is 
+end entity;
+
+
+architecture testbench of esl_demonstrator_testbench is
+	component esl_demonstrator is
+		port(	inp_a : in std_logic;
+				inp_b : in std_logic;
+				rotation_counter : out std_logic_vector(31 downto 0);
+				reset : in std_logic;
+				clk	: in std_logic);
+	end component;

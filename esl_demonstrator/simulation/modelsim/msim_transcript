@@ -1,0 +1,56 @@
+# do esl_demonstrator_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying /opt/altera/13.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied /opt/altera/13.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {/home/esl22/git/ESL_lab/esl_demonstrator/esl_demonstrator.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity esl_demonstrator
+# -- Compiling architecture encoder of esl_demonstrator
+# 
+# vcom -93 -work work {/home/esl22/git/ESL_lab/esl_demonstrator/tb_esl_demonstrator.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity esl_demonstrator_testbench
+# -- Compiling architecture testbench of esl_demonstrator_testbench
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneive -L rtl_work -L work -voptargs="+acc"  demonstrator
+# vsim -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneive -L rtl_work -L work -voptargs=\"+acc\" -t 1ps demonstrator 
+# ** Error: (vsim-3170) Could not find '/home/esl22/git/ESL_lab/esl_demonstrator/simulation/modelsim/rtl_work.demonstrator'.
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./esl_demonstrator_run_msim_rtl_vhdl.do PAUSED at line 12
+vsim work.esl_demonstrator_testbench
+# vsim work.esl_demonstrator_testbench 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.esl_demonstrator_testbench(testbench)
+# Loading ieee.numeric_std(body)
+# Loading work.esl_demonstrator(encoder)
+add wave -position end  sim:/esl_demonstrator_testbench/inp_a
+add wave -position end  sim:/esl_demonstrator_testbench/inp_b
+add wave -position end  sim:/esl_demonstrator_testbench/rotation_counter
+add wave -position end  sim:/esl_demonstrator_testbench/reset
+add wave -position end  sim:/esl_demonstrator_testbench/clk
+run -all
+# ** Note: GO BACK!!!!!
+#    Time: 6400 ns  Iteration: 0  Instance: /esl_demonstrator_testbench
+# ** Note: Shakey shakey
+#    Time: 12800 ns  Iteration: 0  Instance: /esl_demonstrator_testbench
+# ** Failure: end sim
+#    Time: 19625 ns  Iteration: 0  Process: /esl_demonstrator_testbench/line__31 File: /home/esl22/git/ESL_lab/esl_demonstrator/tb_esl_demonstrator.vhd
+# Break in Process line__31 at /home/esl22/git/ESL_lab/esl_demonstrator/tb_esl_demonstrator.vhd line 75
