@@ -17,7 +17,6 @@
   </columns>
  </clocktable>
  <window width="1700" height="1042" x="-9" y="-8" />
- <library
-   expandedCategories="Library/Interface Protocols/Serial,Library/Memories and Memory Controllers/On-Chip,Library/Clock and Reset,Library/Microcontroller Peripherals,Library/Interface Protocols,Library/Peripherals/Microcontroller Peripherals,Library/Peripherals,Library/Peripherals/Debug and Performance,Library/Embedded Processors,Project,Library/Memories and Memory Controllers,Library" />
+ <library expandedCategories="Library,Project" />
  <generation synthesis="VHDL" />
 </preferences>
