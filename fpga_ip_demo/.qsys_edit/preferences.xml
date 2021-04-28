@@ -17,6 +17,6 @@
   </columns>
  </clocktable>
  <window width="1700" height="1042" x="-9" y="-8" />
- <library expandedCategories="Project/Templates,Project,Library" />
+ <library expandedCategories="Library,Project,Project/Templates" />
  <generation synthesis="VHDL" />
 </preferences>

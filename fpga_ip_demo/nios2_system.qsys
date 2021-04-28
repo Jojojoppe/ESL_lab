@@ -77,6 +77,19 @@
          value = "9";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
+   }
+   element esl_encoder_0
+   {
+      datum _sortIndex
+      {
+         value = "10";
+         type = "int";
+      }
    }
    element cpu.jtag_debug_module
    {
@@ -100,6 +113,11 @@
       {
          value = "8";
          type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
       }
    }
    element onchip_mem
@@ -178,7 +196,20 @@
    internal="led_pio.external_connection" />
  <interface
    name="esl_bus_demo_0_user_interface"
-   internal="esl_bus_demo_0.user_interface"
+   internal="esl_bus_demo_0.user_interface" />
+ <interface
+   name="esl_encoder_0_leds_interface"
+   internal="esl_encoder_0.leds_interface"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="esl_encoder_0_encoder_a_interface"
+   internal="esl_encoder_0.encoder_a_interface"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="esl_encoder_0_encoder_b_interface"
+   internal="esl_encoder_0.encoder_b_interface"
    type="conduit"
    dir="end" />
  <module kind="clock_source" version="13.1" enabled="1" name="clk_0">
@@ -337,7 +368,7 @@
   <parameter name="tightlyCoupledInstructionMaster2AddrWidth" value="1" />
   <parameter name="tightlyCoupledInstructionMaster3AddrWidth" value="1" />
   <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='onchip_mem.s1' start='0x8000' end='0xD000' /><slave name='cpu.jtag_debug_module' start='0x10800' end='0x11000' /></address-map>]]></parameter>
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='esl_bus_demo_0.s0' start='0x0' end='0x400' /><slave name='onchip_mem.s1' start='0x8000' end='0xD000' /><slave name='cpu.jtag_debug_module' start='0x10800' end='0x11000' /><slave name='sys_clk_timer.s1' start='0x11000' end='0x11020' /><slave name='sysid.control_slave' start='0x11030' end='0x11038' /><slave name='jtag_uart.avalon_jtag_slave' start='0x11038' end='0x11040' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='esl_encoder_0.s0' start='0x0' end='0x400' /><slave name='onchip_mem.s1' start='0x8000' end='0xD000' /><slave name='cpu.jtag_debug_module' start='0x10800' end='0x11000' /><slave name='sys_clk_timer.s1' start='0x11000' end='0x11020' /><slave name='sysid.control_slave' start='0x11030' end='0x11038' /><slave name='jtag_uart.avalon_jtag_slave' start='0x11038' end='0x11040' /></address-map>]]></parameter>
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="deviceFamilyName" value="Cyclone IV E" />
   <parameter name="internalIrqMaskSystemInfo" value="65538" />
@@ -409,7 +440,13 @@
   <parameter name="width" value="8" />
   <parameter name="clockRate" value="50000000" />
  </module>
- <module kind="esl_bus_demo" version="1.0" enabled="1" name="esl_bus_demo_0">
+ <module kind="esl_bus_demo" version="1.0" enabled="0" name="esl_bus_demo_0">
+  <parameter name="DATA_WIDTH" value="32" />
+  <parameter name="LED_WIDTH" value="8" />
+  <parameter name="AUTO_CLOCK_RESET_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
+ </module>
+ <module kind="esl_encoder" version="1.0" enabled="1" name="esl_encoder_0">
   <parameter name="DATA_WIDTH" value="32" />
   <parameter name="LED_WIDTH" value="8" />
   <parameter name="AUTO_CLOCK_RESET_CLOCK_RATE" value="50000000" />
@@ -536,6 +573,25 @@
    version="13.1"
    start="cpu.data_master"
    end="esl_bus_demo_0.s0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="clock"
+   version="13.1"
+   start="clk_0.clk"
+   end="esl_encoder_0.clock_reset" />
+ <connection
+   kind="reset"
+   version="13.1"
+   start="clk_0.clk_reset"
+   end="esl_encoder_0.clock_reset_reset" />
+ <connection
+   kind="avalon"
+   version="13.1"
+   start="cpu.data_master"
+   end="esl_encoder_0.s0">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
