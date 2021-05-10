@@ -50,6 +50,7 @@ set_module_property VALIDATION_CALLBACK validate_me
 add_file encoder.vhdl {SYNTHESIS SIMULATION}
 add_file encoder_avalon_bus.vhdl {SYNTHESIS SIMULATION}
 
+## 
 ## IP parameters
 ## - Generics defined in the VHDL can be modified from
 ##   a wizard in SOPC builder. This section defines how 
@@ -122,7 +123,7 @@ add_interface encoder_a_interface conduit end
 add_interface_port encoder_a_interface encoder_a encoder_a Input 1
 
 add_interface encoder_b_interface conduit end
-add_interface_port encoder_b_interface encoder_b encoder_b Input 1
+add_interface_port encoder_b_interface encoder_b encoder_b Input 2
 
 ##
 ## - Validation/ elaboration functions
