@@ -6,7 +6,7 @@
    <connections preferredWidth="127" />
    <irq preferredWidth="34" />
    <name preferredWidth="226" />
-   <export preferredWidth="86" />
+   <export preferredWidth="241" />
   </columns>
  </systemtable>
  <clocktable>
@@ -17,6 +17,7 @@
   </columns>
  </clocktable>
  <window width="1700" height="1042" x="-9" y="-8" />
- <library expandedCategories="Library,Project,Project/Templates" />
+ <library expandedCategories="Project,Project/Templates,Library" />
  <generation synthesis="VHDL" />
+ <hdlexample language="VERILOG" />
 </preferences>

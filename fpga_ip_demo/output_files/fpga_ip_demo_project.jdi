@@ -1,6 +1,6 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="b8528c23cba018445f9c"/>
+    <hash md5_digest_80b="89116c6e7db3e2a03107"/>
   </project>
   <file_info>
     <file device="EP4CE22F17C6" path="fpga_ip_demo_project_time_limited.sof" usercode="0xFFFFFFFF"/>
@@ -145,7 +145,7 @@
   <sld_infos>
     <sld_info hpath="nios2_system:inst" name="inst">
       <assignment_values>
-        <assignment_value text="QSYS_NAME nios2_system HAS_SOPCINFO 1 GENERATION_ID 1619608944"/>
+        <assignment_value text="QSYS_NAME nios2_system HAS_SOPCINFO 1 GENERATION_ID 1620659088"/>
       </assignment_values>
       <parameters/>
     </sld_info>

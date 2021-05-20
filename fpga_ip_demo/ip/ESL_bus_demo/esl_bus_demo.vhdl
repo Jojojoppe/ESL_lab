@@ -36,7 +36,8 @@ entity esl_bus_demo is
 		slave_byteenable	: in  std_logic_vector((DATA_WIDTH/8)-1 downto 0);
 
 		-- signals to connect to custom user logic
-		user_output		: out std_logic_vector(LED_WIDTH-1 downto 0)
+		leds		: out std_logic_vector(LED_WIDTH-1 downto 0);
+		encoder_a, encoder_b : in std_logic
 	);
 end entity;
 
@@ -70,7 +71,7 @@ begin
 		rst    => reset,
 		input  => mem_masked,
 		cnt_enable => enable,
-		output => user_output
+		output => leds
 	);
 
 	-- Communication with the bus

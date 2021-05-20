@@ -12,14 +12,6 @@
    element $${FILENAME}
    {
    }
-   element jtag_uart.avalon_jtag_slave
-   {
-      datum baseAddress
-      {
-         value = "69688";
-         type = "String";
-      }
-   }
    element clk_0
    {
       datum _sortIndex
@@ -54,14 +46,6 @@
          type = "boolean";
       }
    }
-   element sysid.control_slave
-   {
-      datum baseAddress
-      {
-         value = "69680";
-         type = "String";
-      }
-   }
    element cpu
    {
       datum _sortIndex
@@ -79,7 +63,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -89,14 +73,6 @@
       {
          value = "10";
          type = "int";
-      }
-   }
-   element cpu.jtag_debug_module
-   {
-      datum baseAddress
-      {
-         value = "67584";
-         type = "String";
       }
    }
    element jtag_uart
@@ -128,30 +104,6 @@
          type = "int";
       }
    }
-   element led_pio.s1
-   {
-      datum baseAddress
-      {
-         value = "69664";
-         type = "String";
-      }
-   }
-   element sys_clk_timer.s1
-   {
-      datum baseAddress
-      {
-         value = "69632";
-         type = "String";
-      }
-   }
-   element onchip_mem.s1
-   {
-      datum baseAddress
-      {
-         value = "32768";
-         type = "String";
-      }
-   }
    element sys_clk_timer
    {
       datum _sortIndex
@@ -180,7 +132,7 @@
  <parameter name="globalResetBus" value="false" />
  <parameter name="hdlLanguage" value="VERILOG" />
  <parameter name="maxAdditionalLatency" value="1" />
- <parameter name="projectName">nios2_quartus2_project.qpf</parameter>
+ <parameter name="projectName">fpga_ip_demo_project.qpf</parameter>
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="0" />
  <parameter name="timeStamp" value="0" />

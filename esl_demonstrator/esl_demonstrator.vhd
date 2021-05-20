@@ -16,7 +16,7 @@ end entity;
 
 
 architecture encoder of esl_demonstrator is
-	signal counter : signed(31 downto 0);
+	signal counter, nextcounter : unsigned(31 downto 0);
 begin
 
 rotation_counter <= std_logic_vector(counter);
@@ -24,28 +24,31 @@ rotation_counter <= std_logic_vector(counter);
 process(reset, clk)
 	variable old_a, old_b : std_logic;
 begin
-	if(reset = '1') then
+	if(reset = '0') then
 		counter <= (others => '0');
+		nextcounter <= (others=>'0');
 	elsif rising_edge(clk) then
+		counter <= nextcounter;
+	
 		-- If edge of A
 		if old_a /= inp_a then
 			if inp_a='1' then
 				-- Rising edge
 				if inp_b='0' then
 					-- Leading A : inc
-					counter <= counter + 1;
+					nextcounter <= counter + 1;
 				else
 					-- Lagging A : dec
-					counter <= counter - 1;
+					nextcounter <= counter - 1;
 				end if;
 			else
 				-- Falling edge
 				if inp_b='1' then
 					-- Leading A : inc
-					counter <= counter + 1;
+					nextcounter <= counter + 1;
 				else
 					-- Lagging A : dec
-					counter <= counter - 1;
+					nextcounter <= counter - 1;
 				end if;
 			end if;
 		-- if edge of Bcounter <= counter - 1;
@@ -54,19 +57,19 @@ begin
 				-- Rising edge
 				if inp_a='0' then
 					-- Leading B : inc
-					counter <= counter - 1;
+					nextcounter <= counter - 1;
 				else
 					-- Lagging B : dec
-					counter <= counter + 1;
+					nextcounter <= counter + 1;
 				end if;
 			else
 				-- Falling edge
 				if inp_a='1' then
 					-- Leading B : inc
-					counter <= counter - 1;
+					nextcounter <= counter - 1;
 				else
 					-- Lagging B : dec
-					counter <= counter + 1;
+					nextcounter <= counter + 1;
 				end if;
 			end if;
 		end if;
@@ -81,7 +84,7 @@ begin
 	--		counter <= counter - 1;
 	--	end if;
 	--elsif(rising_edge(inp_b)) then
-	--	if(inp_a = '1') then
+	--	if(inp_a = '1') tPLD_CLOCKINPUThen
 	--		counter <= counter + 1;
 	--	else 
 	--		counter <= counter - 1;
@@ -103,3 +106,5 @@ begin
 end process;
 
 end architecture;
+
+

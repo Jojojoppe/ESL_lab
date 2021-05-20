@@ -1,5 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
+library work;
+use work.all;
 
 entity encoder_avalon_bus is
 	generic (
@@ -25,31 +27,12 @@ entity encoder_avalon_bus is
 	);
 end entity;
 
-architecture behavior of encoder_avalon_bus is
-	-- Internal memory for the system and a subset for the IP
-	signal enable : std_logic;
---	signal mem        : std_logic_vector(31 downto 0);
-	
+architecture behavior of encoder_avalon_bus is	
 	signal encoder_output : std_logic_vector(DATA_WIDTH-1 downto 0);
 
-	-- Definition of the counter
-	component encoder is
-		generic(
-			DATA_WIDTH : natural := 32
-		);
-		port(
-			inp_a : in std_logic;
-			inp_b : in std_logic;
-			rotation_counter : out std_logic_vector(DATA_WIDTH-1 downto 0); -- out
-			reset : in std_logic;
-			clk	: in std_logic;
-			data_in : in std_logic_vector(DATA_WIDTH-1 downto 0); -- in
-			data_write : in std_logic
-		);
-	end component;
 begin
-	-- Initialization of the example
-	my_ip : encoder generic map(DATA_WIDTH)
+
+	my_ip : entity work.encoder(timesone) generic map(DATA_WIDTH)
 	port map(
 		encoder_a, encoder_b, encoder_output, reset, clk, slave_writedata, slave_write
 	);
@@ -61,14 +44,11 @@ begin
 	p_avalon : process(clk, reset)
 	begin
 		if (reset = '1') then
---			mem <= (others => '0');
+	     --mem <= (others => '0');
 		elsif (rising_edge(clk)) then
 			if (slave_read = '1') then
 				slave_readdata <= encoder_output;
 			end if;
---			if (slave_write = '1') then
---				mem <= slave_writedata;
---			end if;
 		end if;
 	end process;
 end architecture;

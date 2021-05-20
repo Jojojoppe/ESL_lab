@@ -1,5 +1,5 @@
 Flow report for fpga_ip_demo_project
-Wed Apr 28 13:30:05 2021
+Mon May 10 17:06:32 2021
 Quartus II 32-bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -40,18 +40,18 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Wed Apr 28 13:29:58 2021      ;
+; Flow Status                        ; Successful - Mon May 10 17:06:24 2021      ;
 ; Quartus II 32-bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; fpga_ip_demo_project                       ;
 ; Top-level Entity Name              ; nios2_quartus2_project                     ;
 ; Family                             ; Cyclone IV E                               ;
 ; Device                             ; EP4CE22F17C6                               ;
 ; Timing Models                      ; Final                                      ;
-; Total logic elements               ; 2,581 / 22,320 ( 12 % )                    ;
-;     Total combinational functions  ; 2,371 / 22,320 ( 11 % )                    ;
-;     Dedicated logic registers      ; 1,555 / 22,320 ( 7 % )                     ;
-; Total registers                    ; 1555                                       ;
-; Total pins                         ; 9 / 154 ( 6 % )                            ;
+; Total logic elements               ; 2,500 / 22,320 ( 11 % )                    ;
+;     Total combinational functions  ; 2,313 / 22,320 ( 10 % )                    ;
+;     Dedicated logic registers      ; 1,513 / 22,320 ( 7 % )                     ;
+; Total registers                    ; 1513                                       ;
+; Total pins                         ; 43 / 154 ( 28 % )                          ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 192,384 / 608,256 ( 32 % )                 ;
 ; Embedded Multiplier 9-bit elements ; 0 / 132 ( 0 % )                            ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+----------------------+
 ; Option            ; Setting              ;
 +-------------------+----------------------+
-; Start date & time ; 04/28/2021 13:29:12  ;
+; Start date & time ; 05/10/2021 17:05:37  ;
 ; Main task         ; Compilation          ;
 ; Revision Name     ; fpga_ip_demo_project ;
 +-------------------+----------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+----------------------------------------------------------------+----------------------+---------------------------------------------------+----------------+
 ; Assignment Name                     ; Value                                                          ; Default Value        ; Entity Name                                       ; Section Id     ;
 +-------------------------------------+----------------------------------------------------------------+----------------------+---------------------------------------------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 0.161960935216512                                              ; --                   ; --                                                ; --             ;
+; COMPILER_SIGNATURE_ID               ; 0.162065913724190                                              ; --                   ; --                                                ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; None                                                           ; --                   ; --                                                ; eda_simulation ;
 ; IP_TOOL_ENV                         ; Qsys                                                           ; --                   ; altera_avalon_sc_fifo                             ; --             ;
 ; IP_TOOL_ENV                         ; Qsys                                                           ; --                   ; altera_merlin_master_agent                        ; --             ;
@@ -171,7 +171,7 @@ applicable agreement for further details.
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                   ; --                   ; --                                                ; --             ;
 ; SLD_FILE                            ; nios2_system/synthesis/nios2_system.regmap                     ; --                   ; --                                                ; --             ;
 ; SLD_FILE                            ; nios2_system/synthesis/nios2_system.debuginfo                  ; --                   ; --                                                ; --             ;
-; SLD_INFO                            ; QSYS_NAME nios2_system HAS_SOPCINFO 1 GENERATION_ID 1619608944 ; --                   ; nios2_system                                      ; --             ;
+; SLD_INFO                            ; QSYS_NAME nios2_system HAS_SOPCINFO 1 GENERATION_ID 1620659088 ; --                   ; nios2_system                                      ; --             ;
 ; SOPCINFO_FILE                       ; nios2_system/synthesis/../../nios2_system.sopcinfo             ; --                   ; --                                                ; --             ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                                             ; --                   ; --                                                ; --             ;
 ; TOP_LEVEL_ENTITY                    ; nios2_quartus2_project                                         ; fpga_ip_demo_project ; --                                                ; --             ;
@@ -183,11 +183,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:15     ; 1.0                     ; 482 MB              ; 00:00:15                           ;
-; Fitter                    ; 00:00:22     ; 1.3                     ; 732 MB              ; 00:00:27                           ;
-; Assembler                 ; 00:00:03     ; 1.0                     ; 375 MB              ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:05     ; 1.8                     ; 493 MB              ; 00:00:05                           ;
-; Total                     ; 00:00:45     ; --                      ; --                  ; 00:00:49                           ;
+; Analysis & Synthesis      ; 00:00:16     ; 1.0                     ; 487 MB              ; 00:00:15                           ;
+; Fitter                    ; 00:00:23     ; 1.5                     ; 718 MB              ; 00:00:29                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 371 MB              ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:06     ; 1.0                     ; 493 MB              ; 00:00:07                           ;
+; Total                     ; 00:00:47     ; --                      ; --                  ; 00:00:53                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

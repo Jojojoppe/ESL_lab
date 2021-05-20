@@ -1,5 +1,5 @@
 Analysis & Synthesis report for esl_demonstrator
-Mon Apr 26 17:08:29 2021
+Mon May 10 16:38:45 2021
 Quartus II 32-bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -16,9 +16,8 @@ Quartus II 32-bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   8. Registers Removed During Synthesis
   9. General Register Statistics
  10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Port Connectivity Checks: "esl_demonstrator:e_cnt"
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -44,16 +43,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Apr 26 17:08:29 2021      ;
+; Analysis & Synthesis Status        ; Successful - Mon May 10 16:38:45 2021      ;
 ; Quartus II 32-bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; esl_demonstrator                           ;
-; Top-level Entity Name              ; de0_nano_toplevel                          ;
+; Top-level Entity Name              ; Block1                                     ;
 ; Family                             ; Cyclone IV E                               ;
-; Total logic elements               ; 12                                         ;
-;     Total combinational functions  ; 10                                         ;
-;     Dedicated logic registers      ; 10                                         ;
-; Total registers                    ; 10                                         ;
-; Total pins                         ; 45                                         ;
+; Total logic elements               ; 36                                         ;
+;     Total combinational functions  ; 18                                         ;
+;     Dedicated logic registers      ; 34                                         ;
+; Total registers                    ; 34                                         ;
+; Total pins                         ; 43                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -67,7 +66,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP4CE22F17C6       ;                    ;
-; Top-level entity name                                                      ; de0_nano_toplevel  ; esl_demonstrator   ;
+; Top-level entity name                                                      ; Block1             ; esl_demonstrator   ;
 ; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -165,15 +164,16 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                            ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                     ; Library ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
-; esl_demonstrator.vhd             ; yes             ; User VHDL File  ; /home/esl22/git/ESL_lab/esl_demonstrator/esl_demonstrator.vhd    ;         ;
-; tb_esl_demonstrator.vhd          ; yes             ; User VHDL File  ; /home/esl22/git/ESL_lab/esl_demonstrator/tb_esl_demonstrator.vhd ;         ;
-; de0_nano_toplevel.vhd            ; yes             ; User VHDL File  ; /home/esl22/git/ESL_lab/esl_demonstrator/de0_nano_toplevel.vhd   ;         ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                            ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                  ; Library ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------+---------+
+; ../fpga_ip_demo/GPIO_slice.vhd   ; yes             ; User VHDL File                     ; /home/esl22/git/ESL_lab/fpga_ip_demo/GPIO_slice.vhd           ;         ;
+; esl_demonstrator.vhd             ; yes             ; User VHDL File                     ; /home/esl22/git/ESL_lab/esl_demonstrator/esl_demonstrator.vhd ;         ;
+; Block1.bdf                       ; yes             ; User Block Diagram/Schematic File  ; /home/esl22/git/ESL_lab/esl_demonstrator/Block1.bdf           ;         ;
+; slice.vhd                        ; yes             ; User VHDL File                     ; /home/esl22/git/ESL_lab/esl_demonstrator/slice.vhd            ;         ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -181,39 +181,39 @@ applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 12             ;
+; Estimated Total logic elements              ; 36             ;
 ;                                             ;                ;
-; Total combinational functions               ; 10             ;
+; Total combinational functions               ; 18             ;
 ; Logic element usage by number of LUT inputs ;                ;
 ;     -- 4 input functions                    ; 1              ;
-;     -- 3 input functions                    ; 6              ;
+;     -- 3 input functions                    ; 14             ;
 ;     -- <=2 input functions                  ; 3              ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
 ;     -- normal mode                          ; 3              ;
-;     -- arithmetic mode                      ; 7              ;
+;     -- arithmetic mode                      ; 15             ;
 ;                                             ;                ;
-; Total registers                             ; 10             ;
-;     -- Dedicated logic registers            ; 10             ;
+; Total registers                             ; 34             ;
+;     -- Dedicated logic registers            ; 34             ;
 ;     -- I/O registers                        ; 0              ;
 ;                                             ;                ;
-; I/O pins                                    ; 45             ;
+; I/O pins                                    ; 43             ;
 ; Embedded Multiplier 9-bit elements          ; 0              ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 10             ;
-; Total fan-out                               ; 153            ;
-; Average fan-out                             ; 1.06           ;
+; Maximum fan-out                             ; 34             ;
+; Total fan-out                               ; 221            ;
+; Average fan-out                             ; 1.60           ;
 +---------------------------------------------+----------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                ;
-+-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------+--------------+
-; Compilation Hierarchy Node  ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                       ; Library Name ;
-+-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------+--------------+
-; |de0_nano_toplevel          ; 10 (0)            ; 10 (0)       ; 0           ; 0            ; 0       ; 0         ; 45   ; 0            ; |de0_nano_toplevel                        ; work         ;
-;    |esl_demonstrator:e_cnt| ; 10 (10)           ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de0_nano_toplevel|esl_demonstrator:e_cnt ; work         ;
-+-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                   ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name           ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------+--------------+
+; |Block1                    ; 18 (0)            ; 34 (0)       ; 0           ; 0            ; 0       ; 0         ; 43   ; 0            ; |Block1                       ; work         ;
+;    |esl_demonstrator:inst| ; 18 (18)           ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Block1|esl_demonstrator:inst ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -222,8 +222,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------+--------------------+
 ; Register name                          ; Reason for Removal ;
 +----------------------------------------+--------------------+
-; esl_demonstrator:e_cnt|counter[8..31]  ; Lost fanout        ;
-; Total Number of Removed Registers = 24 ;                    ;
+; esl_demonstrator:inst|counter[16..31]  ; Lost fanout        ;
+; Total Number of Removed Registers = 16 ;                    ;
 +----------------------------------------+--------------------+
 
 
@@ -232,32 +232,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 10    ;
+; Total registers                              ; 34    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 8     ;
+; Number of registers using Asynchronous Clear ; 32    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 10    ;
+; Number of registers using Clock Enable       ; 18    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |de0_nano_toplevel|esl_demonstrator:e_cnt|counter[15] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "esl_demonstrator:e_cnt"                                                                                ;
-+-------------------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port                    ; Type   ; Severity ; Details                                                                             ;
-+-------------------------+--------+----------+-------------------------------------------------------------------------------------+
-; rotation_counter[31..8] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------------------------+--------+----------+-------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |Block1|esl_demonstrator:inst|nextcounter[7] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
 
 
 +-------------------------------+
@@ -275,9 +266,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Mon Apr 26 17:08:27 2021
+    Info: Processing started: Mon May 10 16:38:43 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off esl_demonstrator -c esl_demonstrator
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (12021): Found 2 design units, including 1 entities, in source file /home/esl22/git/ESL_lab/fpga_ip_demo/GPIO_slice.vhd
+    Info (12022): Found design unit 1: GPIO_slice-A
+    Info (12023): Found entity 1: GPIO_slice
 Info (12021): Found 2 design units, including 1 entities, in source file esl_demonstrator.vhd
     Info (12022): Found design unit 1: esl_demonstrator-encoder
     Info (12023): Found entity 1: esl_demonstrator
@@ -287,45 +281,17 @@ Info (12021): Found 2 design units, including 1 entities, in source file tb_esl_
 Info (12021): Found 2 design units, including 1 entities, in source file de0_nano_toplevel.vhd
     Info (12022): Found design unit 1: de0_nano_toplevel-a
     Info (12023): Found entity 1: de0_nano_toplevel
-Info (12127): Elaborating entity "de0_nano_toplevel" for the top level hierarchy
-Info (12129): Elaborating entity "esl_demonstrator" using architecture "A:encoder" for hierarchy "esl_demonstrator:e_cnt"
-Warning (13039): The following bidir pins have no drivers
-    Warning (13040): Bidir "GPIO_0[20]" has no driver
-    Warning (13040): Bidir "GPIO_0[22]" has no driver
-    Warning (13040): Bidir "GPIO_0[0]" has no driver
-    Warning (13040): Bidir "GPIO_0[1]" has no driver
-    Warning (13040): Bidir "GPIO_0[2]" has no driver
-    Warning (13040): Bidir "GPIO_0[3]" has no driver
-    Warning (13040): Bidir "GPIO_0[4]" has no driver
-    Warning (13040): Bidir "GPIO_0[5]" has no driver
-    Warning (13040): Bidir "GPIO_0[6]" has no driver
-    Warning (13040): Bidir "GPIO_0[7]" has no driver
-    Warning (13040): Bidir "GPIO_0[8]" has no driver
-    Warning (13040): Bidir "GPIO_0[9]" has no driver
-    Warning (13040): Bidir "GPIO_0[10]" has no driver
-    Warning (13040): Bidir "GPIO_0[11]" has no driver
-    Warning (13040): Bidir "GPIO_0[12]" has no driver
-    Warning (13040): Bidir "GPIO_0[13]" has no driver
-    Warning (13040): Bidir "GPIO_0[14]" has no driver
-    Warning (13040): Bidir "GPIO_0[15]" has no driver
-    Warning (13040): Bidir "GPIO_0[16]" has no driver
-    Warning (13040): Bidir "GPIO_0[17]" has no driver
-    Warning (13040): Bidir "GPIO_0[18]" has no driver
-    Warning (13040): Bidir "GPIO_0[19]" has no driver
-    Warning (13040): Bidir "GPIO_0[21]" has no driver
-    Warning (13040): Bidir "GPIO_0[23]" has no driver
-    Warning (13040): Bidir "GPIO_0[24]" has no driver
-    Warning (13040): Bidir "GPIO_0[25]" has no driver
-    Warning (13040): Bidir "GPIO_0[26]" has no driver
-    Warning (13040): Bidir "GPIO_0[27]" has no driver
-    Warning (13040): Bidir "GPIO_0[28]" has no driver
-    Warning (13040): Bidir "GPIO_0[29]" has no driver
-    Warning (13040): Bidir "GPIO_0[30]" has no driver
-    Warning (13040): Bidir "GPIO_0[31]" has no driver
-    Warning (13040): Bidir "GPIO_0[32]" has no driver
-    Warning (13040): Bidir "GPIO_0[33]" has no driver
+Info (12021): Found 1 design units, including 1 entities, in source file Block1.bdf
+    Info (12023): Found entity 1: Block1
+Info (12021): Found 2 design units, including 1 entities, in source file slice.vhd
+    Info (12022): Found design unit 1: slice-B
+    Info (12023): Found entity 1: slice
+Info (12127): Elaborating entity "Block1" for the top level hierarchy
+Info (12128): Elaborating entity "slice" for hierarchy "slice:inst3"
+Info (12128): Elaborating entity "esl_demonstrator" for hierarchy "esl_demonstrator:inst"
+Info (12128): Elaborating entity "GPIO_slice" for hierarchy "GPIO_slice:inst2"
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 24 registers lost all their fanouts during netlist optimizations.
+Info (17049): 16 registers lost all their fanouts during netlist optimizations.
 Warning (20013): Ignored assignments for entity "nios2_quartus2_project" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity nios2_quartus2_project -section_id Top was ignored
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity nios2_quartus2_project -section_id Top was ignored
@@ -353,16 +319,45 @@ Warning (20013): Ignored assignments for entity "nios2_quartus2_project" -- enti
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity nios2_quartus2_project -section_id Top was ignored
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[1]"
-Info (21057): Implemented 57 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 3 input pins
+Warning (21074): Design contains 31 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "GPIO_0[32]"
+    Warning (15610): No output dependent on input pin "GPIO_0[31]"
+    Warning (15610): No output dependent on input pin "GPIO_0[30]"
+    Warning (15610): No output dependent on input pin "GPIO_0[29]"
+    Warning (15610): No output dependent on input pin "GPIO_0[28]"
+    Warning (15610): No output dependent on input pin "GPIO_0[27]"
+    Warning (15610): No output dependent on input pin "GPIO_0[26]"
+    Warning (15610): No output dependent on input pin "GPIO_0[25]"
+    Warning (15610): No output dependent on input pin "GPIO_0[24]"
+    Warning (15610): No output dependent on input pin "GPIO_0[23]"
+    Warning (15610): No output dependent on input pin "GPIO_0[21]"
+    Warning (15610): No output dependent on input pin "GPIO_0[19]"
+    Warning (15610): No output dependent on input pin "GPIO_0[18]"
+    Warning (15610): No output dependent on input pin "GPIO_0[17]"
+    Warning (15610): No output dependent on input pin "GPIO_0[16]"
+    Warning (15610): No output dependent on input pin "GPIO_0[15]"
+    Warning (15610): No output dependent on input pin "GPIO_0[14]"
+    Warning (15610): No output dependent on input pin "GPIO_0[13]"
+    Warning (15610): No output dependent on input pin "GPIO_0[12]"
+    Warning (15610): No output dependent on input pin "GPIO_0[11]"
+    Warning (15610): No output dependent on input pin "GPIO_0[10]"
+    Warning (15610): No output dependent on input pin "GPIO_0[9]"
+    Warning (15610): No output dependent on input pin "GPIO_0[8]"
+    Warning (15610): No output dependent on input pin "GPIO_0[7]"
+    Warning (15610): No output dependent on input pin "GPIO_0[6]"
+    Warning (15610): No output dependent on input pin "GPIO_0[5]"
+    Warning (15610): No output dependent on input pin "GPIO_0[4]"
+    Warning (15610): No output dependent on input pin "GPIO_0[3]"
+    Warning (15610): No output dependent on input pin "GPIO_0[2]"
+    Warning (15610): No output dependent on input pin "GPIO_0[1]"
+    Warning (15610): No output dependent on input pin "GPIO_0[0]"
+Info (21057): Implemented 79 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 35 input pins
     Info (21059): Implemented 8 output pins
-    Info (21060): Implemented 34 bidirectional pins
-    Info (21061): Implemented 12 logic cells
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 62 warnings
-    Info: Peak virtual memory: 433 megabytes
-    Info: Processing ended: Mon Apr 26 17:08:29 2021
+    Info (21061): Implemented 36 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 57 warnings
+    Info: Peak virtual memory: 434 megabytes
+    Info: Processing ended: Mon May 10 16:38:45 2021
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
