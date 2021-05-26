@@ -5,7 +5,11 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
+vcom -93 -work work {/home/esl22/git/ESL_lab/PWM/FDIV.vhd}
 vcom -93 -work work {/home/esl22/git/ESL_lab/PWM/PWM.vhd}
+vcom -93 -work work {/home/esl22/git/ESL_lab/PWM/restbench.vhd}
+vcom -93 -work work {/home/esl22/git/ESL_lab/PWM/DutyCycleCounter.vhd}
+vcom -93 -work work {/home/esl22/git/ESL_lab/PWM/toplevel.vhd}
 
 vcom -93 -work work {/home/esl22/git/ESL_lab/PWM/restbench.vhd}
 

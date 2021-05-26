@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for esl_demonstrator
-Mon May 10 16:39:05 2021
+Wed May 26 16:53:33 2021
 Quartus II 32-bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -1685,7 +1685,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Mon May 10 16:39:03 2021
+    Info: Processing started: Wed May 26 16:53:30 2021
 Info: Command: quartus_sta esl_demonstrator -c esl_demonstrator
 Info: qsta_default_script.tcl version: #1
 Warning (20013): Ignored assignments for entity "nios2_quartus2_project" -- entity does not exist in design
@@ -1782,9 +1782,9 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 29 warnings
-    Info: Peak virtual memory: 464 megabytes
-    Info: Processing ended: Mon May 10 16:39:05 2021
-    Info: Elapsed time: 00:00:02
+    Info: Peak virtual memory: 467 megabytes
+    Info: Processing ended: Wed May 26 16:53:33 2021
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 
 

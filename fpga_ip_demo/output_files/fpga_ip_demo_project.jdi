@@ -1,6 +1,6 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="89116c6e7db3e2a03107"/>
+    <hash md5_digest_80b="52cbb1fda92ecbc86e6d"/>
   </project>
   <file_info>
     <file device="EP4CE22F17C6" path="fpga_ip_demo_project_time_limited.sof" usercode="0xFFFFFFFF"/>

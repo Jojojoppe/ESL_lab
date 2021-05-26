@@ -1,5 +1,5 @@
 Analysis & Synthesis report for fpga_ip_demo_project
-Mon May 10 17:05:53 2021
+Wed May 26 17:05:28 2021
 Quartus II 32-bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -154,7 +154,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon May 10 17:05:53 2021      ;
+; Analysis & Synthesis Status        ; Successful - Wed May 26 17:05:27 2021      ;
 ; Quartus II 32-bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; fpga_ip_demo_project                       ;
 ; Top-level Entity Name              ; nios2_quartus2_project                     ;
@@ -375,9 +375,9 @@ applicable agreement for further details.
 ;                                             ;                ;
 ; Total combinational functions               ; 2308           ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 1167           ;
-;     -- 3 input functions                    ; 706            ;
-;     -- <=2 input functions                  ; 435            ;
+;     -- 4 input functions                    ; 1171           ;
+;     -- 3 input functions                    ; 704            ;
+;     -- <=2 input functions                  ; 433            ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
 ;     -- normal mode                          ; 2085           ;
@@ -392,7 +392,7 @@ applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0              ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 1444           ;
-; Total fan-out                               ; 16381          ;
+; Total fan-out                               ; 16387          ;
 ; Average fan-out                             ; 3.95           ;
 +---------------------------------------------+----------------+
 
@@ -3198,7 +3198,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Partition Name   ; Elapsed Time ;
 +------------------+--------------+
 ; Top              ; 00:00:06     ;
-; sld_hub:auto_hub ; 00:00:00     ;
+; sld_hub:auto_hub ; 00:00:01     ;
 ; pzdyqx:nabboc    ; 00:00:00     ;
 +------------------+--------------+
 
@@ -3209,7 +3209,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Mon May 10 17:05:36 2021
+    Info: Processing started: Wed May 26 17:05:10 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fpga_ip_demo_project -c fpga_ip_demo_project
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file /home/esl22/git/ESL_lab/esl_demonstrator/esl_demonstrator.vhd
@@ -3572,9 +3572,9 @@ Info (21057): Implemented 3061 device resources after synthesis - the final reso
     Info (21064): Implemented 190 RAM segments
 Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 49 warnings
     Info: Peak virtual memory: 491 megabytes
-    Info: Processing ended: Mon May 10 17:05:53 2021
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:17
+    Info: Processing ended: Wed May 26 17:05:28 2021
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:18
 
 
 +------------------------------------------+

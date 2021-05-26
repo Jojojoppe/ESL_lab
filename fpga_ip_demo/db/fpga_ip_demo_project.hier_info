@@ -65,10 +65,10 @@ GPIO_0[16] => ~NO_FANOUT~
 GPIO_0[17] => ~NO_FANOUT~
 GPIO_0[18] => ~NO_FANOUT~
 GPIO_0[19] => ~NO_FANOUT~
-GPIO_0[20] => encoder_a.DATAIN
-GPIO_0[21] => ~NO_FANOUT~
-GPIO_0[22] => encoder_b.DATAIN
-GPIO_0[23] => ~NO_FANOUT~
+GPIO_0[20] => ~NO_FANOUT~
+GPIO_0[21] => encoder_a.DATAIN
+GPIO_0[22] => ~NO_FANOUT~
+GPIO_0[23] => encoder_b.DATAIN
 GPIO_0[24] => ~NO_FANOUT~
 GPIO_0[25] => ~NO_FANOUT~
 GPIO_0[26] => ~NO_FANOUT~
@@ -78,8 +78,8 @@ GPIO_0[29] => ~NO_FANOUT~
 GPIO_0[30] => ~NO_FANOUT~
 GPIO_0[31] => ~NO_FANOUT~
 GPIO_0[32] => ~NO_FANOUT~
-encoder_a <= GPIO_0[20].DB_MAX_OUTPUT_PORT_TYPE
-encoder_b <= GPIO_0[22].DB_MAX_OUTPUT_PORT_TYPE
+encoder_a <= GPIO_0[21].DB_MAX_OUTPUT_PORT_TYPE
+encoder_b <= GPIO_0[23].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |nios2_quartus2_project|nios2_system:inst

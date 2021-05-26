@@ -1,7 +1,141 @@
-|PWM
+|toplevel
+INA <> PWM:PWM_comp.INA
+INB <> PWM:PWM_comp.INB
+GPIO_0[0] <> <UNC>
+GPIO_0[1] <> <UNC>
+GPIO_0[2] <> <UNC>
+GPIO_0[3] <> <UNC>
+GPIO_0[4] <> <UNC>
+GPIO_0[5] <> <UNC>
+GPIO_0[6] <> <UNC>
+GPIO_0[7] <> <UNC>
+GPIO_0[8] <> <UNC>
+GPIO_0[9] <> <UNC>
+GPIO_0[10] <> <UNC>
+GPIO_0[11] <> <UNC>
+GPIO_0[12] <> <UNC>
+GPIO_0[13] <> <UNC>
+GPIO_0[14] <> <UNC>
+GPIO_0[15] <> <UNC>
+GPIO_0[16] <> <UNC>
+GPIO_0[17] <> <UNC>
+GPIO_0[18] <> <UNC>
+GPIO_0[19] <> <UNC>
+GPIO_0[20] <> <UNC>
+GPIO_0[21] <> GPIO_0[21]
+GPIO_0[22] <> GPIO_0[22]
+GPIO_0[23] <> GPIO_0[23]
+GPIO_0[24] <> <UNC>
+GPIO_0[25] <> <UNC>
+GPIO_0[26] <> <UNC>
+GPIO_0[27] <> <UNC>
+GPIO_0[28] <> <UNC>
+GPIO_0[29] <> <UNC>
+GPIO_0[30] <> <UNC>
+GPIO_0[31] <> <UNC>
+GPIO_0[32] <> <UNC>
+GPIO_0[33] <> <UNC>
+duty_cycle[0] => ~NO_FANOUT~
+duty_cycle[1] => ~NO_FANOUT~
+duty_cycle[2] => ~NO_FANOUT~
+duty_cycle[3] => ~NO_FANOUT~
+duty_cycle[4] => ~NO_FANOUT~
+duty_cycle[5] => ~NO_FANOUT~
+duty_cycle[6] => ~NO_FANOUT~
+duty_cycle[7] => ~NO_FANOUT~
+direction => PWM:PWM_comp.direction
+CLOCK_50 => FDIV:FDIV_DUTY_comp.CLKin
+CLOCK_50 => FDIV:FDIV_PWM_comp.CLKin
+KEY[0] => FDIV:FDIV_DUTY_comp.RST
+KEY[0] => DutyCycleCounter:DUTY_comp.rst
+KEY[0] => FDIV:FDIV_PWM_comp.RST
+KEY[0] => PWM:PWM_comp.reset
+KEY[1] => ~NO_FANOUT~
+
+
+|toplevel|FDIV:FDIV_DUTY_comp
+CLKin => iclk.CLK
+CLKin => cnt[0].CLK
+CLKin => cnt[1].CLK
+CLKin => cnt[2].CLK
+CLKin => cnt[3].CLK
+CLKin => cnt[4].CLK
+CLKin => cnt[5].CLK
+CLKin => cnt[6].CLK
+CLKin => cnt[7].CLK
+CLKin => cnt[8].CLK
+CLKin => cnt[9].CLK
+CLKin => cnt[10].CLK
+CLKin => cnt[11].CLK
+CLKin => cnt[12].CLK
+CLKin => cnt[13].CLK
+CLKin => cnt[14].CLK
+CLKin => cnt[15].CLK
+CLKin => cnt[16].CLK
+CLKin => cnt[17].CLK
+CLKout <= iclk.DB_MAX_OUTPUT_PORT_TYPE
+RST => iclk.ACLR
+RST => cnt[0].ACLR
+RST => cnt[1].ACLR
+RST => cnt[2].ACLR
+RST => cnt[3].ACLR
+RST => cnt[4].ACLR
+RST => cnt[5].ACLR
+RST => cnt[6].ACLR
+RST => cnt[7].ACLR
+RST => cnt[8].ACLR
+RST => cnt[9].ACLR
+RST => cnt[10].ACLR
+RST => cnt[11].ACLR
+RST => cnt[12].ACLR
+RST => cnt[13].ACLR
+RST => cnt[14].ACLR
+RST => cnt[15].ACLR
+RST => cnt[16].ACLR
+RST => cnt[17].ACLR
+
+
+|toplevel|DutyCycleCounter:DUTY_comp
+duty_cycle[0] <= counter[0].DB_MAX_OUTPUT_PORT_TYPE
+duty_cycle[1] <= counter[1].DB_MAX_OUTPUT_PORT_TYPE
+duty_cycle[2] <= counter[2].DB_MAX_OUTPUT_PORT_TYPE
+duty_cycle[3] <= counter[3].DB_MAX_OUTPUT_PORT_TYPE
+duty_cycle[4] <= counter[4].DB_MAX_OUTPUT_PORT_TYPE
+duty_cycle[5] <= counter[5].DB_MAX_OUTPUT_PORT_TYPE
+duty_cycle[6] <= counter[6].DB_MAX_OUTPUT_PORT_TYPE
+duty_cycle[7] <= counter[7].DB_MAX_OUTPUT_PORT_TYPE
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => counter[3].CLK
+clk => counter[4].CLK
+clk => counter[5].CLK
+clk => counter[6].CLK
+clk => counter[7].CLK
+rst => counter[0].ACLR
+rst => counter[1].ACLR
+rst => counter[2].ACLR
+rst => counter[3].ACLR
+rst => counter[4].ACLR
+rst => counter[5].ACLR
+rst => counter[6].ACLR
+rst => counter[7].ACLR
+
+
+|toplevel|FDIV:FDIV_PWM_comp
+CLKin => iclk.CLK
+CLKin => cnt[0].CLK
+CLKin => cnt[1].CLK
+CLKout <= iclk.DB_MAX_OUTPUT_PORT_TYPE
+RST => iclk.ACLR
+RST => cnt[0].ACLR
+RST => cnt[1].ACLR
+
+
+|toplevel|PWM:PWM_comp
 INA <> INA~reg0
 INB <> INB~reg0
-C << C~reg0.DB_MAX_OUTPUT_PORT_TYPE
+C <= C~reg0.DB_MAX_OUTPUT_PORT_TYPE
 duty_cycle[0] => LessThan0.IN8
 duty_cycle[1] => LessThan0.IN7
 duty_cycle[2] => LessThan0.IN6

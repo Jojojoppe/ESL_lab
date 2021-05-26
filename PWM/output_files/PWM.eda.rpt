@@ -1,5 +1,5 @@
 EDA Netlist Writer report for PWM
-Thu May 20 14:19:38 2021
+Wed May 26 15:50:20 2021
 Quartus II 32-bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -36,9 +36,9 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Thu May 20 14:19:38 2021 ;
+; EDA Netlist Writer Status ; Successful - Wed May 26 15:50:20 2021 ;
 ; Revision Name             ; PWM                                   ;
-; Top-level Entity Name     ; PWM                                   ;
+; Top-level Entity Name     ; toplevel                              ;
 ; Family                    ; Cyclone IV E                          ;
 ; Simulation Files Creation ; Successful                            ;
 +---------------------------+---------------------------------------+
@@ -88,7 +88,7 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 32-bit EDA Netlist Writer
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Thu May 20 14:19:37 2021
+    Info: Processing started: Wed May 26 15:50:19 2021
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off PWM -c PWM
 Info (204019): Generated file PWM_6_1200mv_85c_slow.vho in folder "/home/esl22/git/ESL_lab/PWM/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file PWM_6_1200mv_0c_slow.vho in folder "/home/esl22/git/ESL_lab/PWM/simulation/modelsim/" for EDA simulation tool
@@ -99,8 +99,8 @@ Info (204019): Generated file PWM_6_1200mv_0c_vhd_slow.sdo in folder "/home/esl2
 Info (204019): Generated file PWM_min_1200mv_0c_vhd_fast.sdo in folder "/home/esl22/git/ESL_lab/PWM/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file PWM_vhd.sdo in folder "/home/esl22/git/ESL_lab/PWM/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 32-bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 337 megabytes
-    Info: Processing ended: Thu May 20 14:19:38 2021
+    Info: Peak virtual memory: 341 megabytes
+    Info: Processing ended: Wed May 26 15:50:20 2021
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

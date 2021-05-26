@@ -12,6 +12,6 @@ end entity;
 
 architecture A of GPIO_slice is
 begin
-	encoder_a <= GPIO_0(20);
-	encoder_b <= GPIO_0(22);
+	encoder_a <= GPIO_0(21);
+	encoder_b <= GPIO_0(23);
 end architecture;
