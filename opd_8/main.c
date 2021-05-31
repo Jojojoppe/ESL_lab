@@ -5,14 +5,6 @@
 #include <gst/app/gstappsrc.h>
 #include <string.h>
 
-int cnt = 0;
-
-typedef struct{
-	GMainLoop * loop;
-	GstElement * source;
-	GstElement * sink;
-} ProgramData;
-
 static gboolean bus_call (GstBus * bus, GstMessage * msg, gpointer data){
   GMainLoop *loop = (GMainLoop *) data;
   switch (GST_MESSAGE_TYPE (msg)) {
@@ -46,9 +38,9 @@ static void on_pad_added (GstElement *element, GstPad * pad, gpointer data){
   gst_object_unref (sinkpad);
 }
 
-static GstFlowReturn on_new_sample_from_sink(GstElement * elt, ProgramData * data){
-	GstSample * sample = gst_app_sink_pull_sample(GST_APP_SINK(elt));
-	g_print("Frame %d\r\n", cnt++);
+static GstFlowReturn on_new_sample_from_sink(GstElement * elt, gpointer data){
+	//GstSample * sample = gst_app_sink_pull_sample(GST_APP_SINK(elt));
+	g_print(".");
 		//GstBuffer * buffer = gst_sample_get_buffer(sample);
 		//if(buffer){
 		//	GstMapInfo info;
@@ -59,7 +51,7 @@ static GstFlowReturn on_new_sample_from_sink(GstElement * elt, ProgramData * dat
 			//gst_buffer_unmap(buffer, &info);
 		//}
 		//gst_buffer_unref(buffer);
-	gst_sample_unref(sample);
+	//gst_sample_unref(sample);
 	return GST_FLOW_OK;
 }
 
@@ -68,8 +60,6 @@ int main (int argc, char * argv[]){
 
 	gst_init (&argc, &argv);
 	loop = g_main_loop_new (NULL, FALSE);
-	ProgramData *data = g_new0 (ProgramData, 1);
-	data->loop = loop;
 
 	GstElement * pipeline = gst_pipeline_new ("test-pipeline");
 	g_assert(pipeline);
@@ -85,17 +75,21 @@ int main (int argc, char * argv[]){
 					"format", G_TYPE_STRING, "YUY2",
 					"width", G_TYPE_INT, 160,
 					"height", G_TYPE_INT, 120,
-					"framerate", GST_TYPE_FRACTION, 15, 1, 
+					"framerate", GST_TYPE_FRACTION, 30, 1,
+					"interlace-mode", G_TYPE_STRING, "progressive", 
 					NULL), NULL);
 
 	//GstElement * videorate = gst_element_factory_make("videorate", NULL);
 	//g_assert(videorate);
 
+	GstElement * queue = gst_element_factory_make("queue", NULL);
+	g_assert(queue);
+
 	GstElement * sink = gst_element_factory_make("appsink", NULL);
+	//GstElement * sink = gst_element_factory_make("fakesink", NULL);
 	g_assert(sink);
-	g_object_set(sink, "emit-signals",  TRUE, "drop", TRUE, NULL);
-	g_signal_connect(sink, "new-sample", G_CALLBACK (on_new_sample_from_sink), data);
-	
+	g_object_set(sink, "emit-signals",  TRUE, "async", FALSE, NULL);
+	g_signal_connect(sink, "new-sample", G_CALLBACK (on_new_sample_from_sink), NULL);
 
 	/* we add a message handler */
 	GstBus * bus = gst_pipeline_get_bus (GST_PIPELINE (pipeline));
@@ -103,13 +97,20 @@ int main (int argc, char * argv[]){
 	gst_object_unref (bus);
 
 	gst_bin_add_many (GST_BIN (pipeline),
-					source, source_caps, sink, 
+					source,
+					queue,
+					source_caps,
+				   	sink, 
 	NULL);
 
-	gst_element_link_many(source, source_caps, sink, NULL);
+	gst_element_link_many(
+					source,
+					queue,
+					source_caps,
+				   	sink, 
+	NULL);
 
 	gst_element_set_state(pipeline, GST_STATE_PLAYING);
-	gst_element_set_state(sink, GST_STATE_PLAYING);
 
 	g_print ("Running...\n");
 	g_main_loop_run(loop);
