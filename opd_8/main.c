@@ -5,6 +5,12 @@
 #include <gst/app/gstappsrc.h>
 #include <string.h>
 
+typedef struct{
+	GMainLoop * loop;
+	GstElement * source;
+	GstElement * sink;
+} ProgramData;
+
 static gboolean bus_call (GstBus * bus, GstMessage * msg, gpointer data){
   GMainLoop *loop = (GMainLoop *) data;
   switch (GST_MESSAGE_TYPE (msg)) {
@@ -40,6 +46,7 @@ static void on_pad_added (GstElement *element, GstPad * pad, gpointer data){
 
 static GstFlowReturn on_new_sample_from_sink(GstElement * elt, ProgramData * data){
 	GstFlowReturn ret;
+	printf("Framer\r\n");
 
 	return ret;
 }
