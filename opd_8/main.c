@@ -5,6 +5,8 @@
 #include <gst/app/gstappsrc.h>
 #include <string.h>
 
+int cnt = 0;
+
 typedef struct{
 	GMainLoop * loop;
 	GstElement * source;
@@ -45,26 +47,35 @@ static void on_pad_added (GstElement *element, GstPad * pad, gpointer data){
 }
 
 static GstFlowReturn on_new_sample_from_sink(GstElement * elt, ProgramData * data){
-	GstFlowReturn ret;
-	printf("Framer\r\n");
+	GstSample * sample = gst_app_sink_pull_sample(GST_APP_SINK(elt));
+	g_print("Frame %d\r\n", cnt++);
+		//GstBuffer * buffer = gst_sample_get_buffer(sample);
+		//if(buffer){
+		//	GstMapInfo info;
+			//gst_buffer_map(buffer, &info, GST_MAP_READ);
 
-	return ret;
+			//g_print("Appsink: buff recv: %u\r\n", info.data);
+
+			//gst_buffer_unmap(buffer, &info);
+		//}
+		//gst_buffer_unref(buffer);
+	gst_sample_unref(sample);
+	return GST_FLOW_OK;
 }
-
-
 
 int main (int argc, char * argv[]){
 	GMainLoop *loop;
 
 	gst_init (&argc, &argv);
 	loop = g_main_loop_new (NULL, FALSE);
-
 	ProgramData *data = g_new0 (ProgramData, 1);
+	data->loop = loop;
 
 	GstElement * pipeline = gst_pipeline_new ("test-pipeline");
 	g_assert(pipeline);
 
 	GstElement * source = gst_element_factory_make("v4l2src", NULL);
+	//GstElement * source = gst_element_factory_make("videotestsrc", NULL);
 	g_assert(source);
 	g_object_set(source, "device", argv[1], NULL);
 
@@ -74,15 +85,16 @@ int main (int argc, char * argv[]){
 					"format", G_TYPE_STRING, "YUY2",
 					"width", G_TYPE_INT, 160,
 					"height", G_TYPE_INT, 120,
-					"framerate", GST_TYPE_FRACTION, 30, 1, 
+					"framerate", GST_TYPE_FRACTION, 15, 1, 
 					NULL), NULL);
+
+	//GstElement * videorate = gst_element_factory_make("videorate", NULL);
+	//g_assert(videorate);
 
 	GstElement * sink = gst_element_factory_make("appsink", NULL);
 	g_assert(sink);
-
-	g_object_set(sink, "emit-signals",  TRUE, "sync", FALSE, NULL);
+	g_object_set(sink, "emit-signals",  TRUE, "drop", TRUE, NULL);
 	g_signal_connect(sink, "new-sample", G_CALLBACK (on_new_sample_from_sink), data);
-	
 	
 
 	/* we add a message handler */
@@ -91,19 +103,19 @@ int main (int argc, char * argv[]){
 	gst_object_unref (bus);
 
 	gst_bin_add_many (GST_BIN (pipeline),
-					source, source_caps, sink, NULL);
+					source, source_caps, sink, 
+	NULL);
 
 	gst_element_link_many(source, source_caps, sink, NULL);
-	//gst_element_link(source, source_caps);
-	//gst_element_link(source_caps, sink);
 
-	gst_element_set_state (pipeline, GST_STATE_PLAYING);
+	gst_element_set_state(pipeline, GST_STATE_PLAYING);
+	gst_element_set_state(sink, GST_STATE_PLAYING);
 
 	g_print ("Running...\n");
-	g_main_loop_run (loop);
+	g_main_loop_run(loop);
 
 	g_print ("Returned, stopping playback\n");
-	gst_element_set_state (pipeline, GST_STATE_NULL);
+	gst_element_set_state(pipeline, GST_STATE_NULL);
 
 	g_print ("Deleting pipeline\n");
 	gst_object_unref (GST_OBJECT (pipeline));
