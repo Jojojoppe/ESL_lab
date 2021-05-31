@@ -69,27 +69,28 @@ int main (int argc, char * argv[]){
 	g_assert(source);
 	g_object_set(source, "device", argv[1], NULL);
 
-	GstElement * source_caps = gst_element_factory_make ("capsfilter", NULL);
-	g_assert(source_caps);
-	g_object_set(source_caps, "caps", gst_caps_new_simple("video/x-raw",
-					"format", G_TYPE_STRING, "YUY2",
-					"width", G_TYPE_INT, 160,
-					"height", G_TYPE_INT, 120,
-					"framerate", GST_TYPE_FRACTION, 30, 1,
-					"interlace-mode", G_TYPE_STRING, "progressive", 
-					NULL), NULL);
-
-	//GstElement * videorate = gst_element_factory_make("videorate", NULL);
-	//g_assert(videorate);
-
-	GstElement * queue = gst_element_factory_make("queue", NULL);
-	g_assert(queue);
+	//GstElement * source_caps = gst_element_factory_make ("capsfilter", NULL);
+	//g_assert(source_caps);
+	//g_object_set(source_caps, "caps", gst_caps_new_simple("video/x-raw",
+	//				"format", G_TYPE_STRING, "YUY2",
+	//				"width", G_TYPE_INT, 160,
+	//				"height", G_TYPE_INT, 120,
+	//				"framerate", GST_TYPE_FRACTION, 30, 1,
+	//				"interlace-mode", G_TYPE_STRING, "progressive", 
+	//				NULL), NULL);
 
 	GstElement * sink = gst_element_factory_make("appsink", NULL);
 	//GstElement * sink = gst_element_factory_make("fakesink", NULL);
 	g_assert(sink);
 	g_object_set(sink, "emit-signals",  TRUE, "async", FALSE, NULL);
 	g_signal_connect(sink, "new-sample", G_CALLBACK (on_new_sample_from_sink), NULL);
+	g_object_set(sink, "caps", gst_caps_new_simple("video/x-raw",
+					"format", G_TYPE_STRING, "YUY2",
+					"width", G_TYPE_INT, 160,
+					"height", G_TYPE_INT, 120,
+					"framerate", GST_TYPE_FRACTION, 30, 1,
+					"interlace-mode", G_TYPE_STRING, "progressive", 
+					NULL), NULL);
 
 	/* we add a message handler */
 	GstBus * bus = gst_pipeline_get_bus (GST_PIPELINE (pipeline));
@@ -98,15 +99,13 @@ int main (int argc, char * argv[]){
 
 	gst_bin_add_many (GST_BIN (pipeline),
 					source,
-					queue,
-					source_caps,
+					//source_caps,
 				   	sink, 
 	NULL);
 
 	gst_element_link_many(
 					source,
-					queue,
-					source_caps,
+					//source_caps,
 				   	sink, 
 	NULL);
 
