@@ -19,15 +19,18 @@ entity setup_control is
   port (
     CLOCK_50      : in    std_logic;
 
-    -- GPMC side
+    -- GPMC sidesetup_control_comp : setup_control port map(CLOCK_50, );
+
     GPMC_DATA     : inout std_logic_vector(DATA_WIDTH - 1 downto 0);
     GPMC_ADDR     : in    std_logic_vector(GPMC_ADDR_WIDTH_HIGH downto GPMC_ADDR_WIDTH_LOW);
     GPMC_nPWE     : in    std_logic;
     GPMC_nOE      : in    std_logic;
-    GPMC_FPGA_IRQ : in    std_logic;
+    GPMC_FPGA_IRQ : in 	  std_logic;
     GPMC_nCS6     : in    std_logic;
-    GPMC_CLK      : in    std_logic
-
+    GPMC_CLK      : in    std_logic;
+		 
+	 ENC1I			: in 	  std_logic;
+	 ENC2I			: in	  std_logic
  
   );
 end setup_control;
@@ -45,7 +48,7 @@ architecture structure of setup_control is
 		);
 		port(
 			clk           : in    std_logic;
-			-- Input (data from fpga to gumstix) at IDX 0 and IDX 1
+			-- Input (dasetup_control_comp : setup_control port map(CLOCK_50, );
 			in_reg0 : in std_logic_vector(DATA_WIDTH - 1 downto 0);
 			in_reg1 : in std_logic_vector(DATA_WIDTH - 1 downto 0);
 
@@ -63,6 +66,21 @@ architecture structure of setup_control is
 			GPMC_CLK      : in    std_logic
 		);
 	end component;
+	
+	component encoder is 
+		generic(
+			DATA_WIDTH : natural := 16
+		);
+		port(
+			inp_a : in std_logic;
+			inp_b : in std_logic;
+			rotation_counter : out std_logic_vector(DATA_WIDTH-1 downto 0); -- out
+			reset : in std_logic;
+			clk	: in std_logic;
+			data_in : in std_logic_vector(DATA_WIDTH-1 downto 0); -- in
+			data_write : in std_logic
+		);
+	end component;
 
 
 	-- Define signals to connect the component to the gpmc_driver
@@ -70,7 +88,7 @@ architecture structure of setup_control is
 	signal in_reg1 : std_logic_vector(DATA_WIDTH - 1 downto 0) := (others => '0');
 	signal out_reg2 : std_logic_vector(DATA_WIDTH - 1 downto 0) := (others => '0');
 	signal out_reg3 : std_logic_vector(DATA_WIDTH - 1 downto 0) := (others => '0');
-
+	
 begin
 	-- Map GPMC controller to I/O.
 	gpmc_driver : ramstix_gpmc_driver 
@@ -93,6 +111,10 @@ begin
       GPMC_nCS6     			=> GPMC_nCS6,
       GPMC_CLK      			=> GPMC_CLK
     );
+	 
+	 
+	 encoder_comp : encoder port map(ENC1I, ENC2I, in_reg0, '0', CLOCK_50, out_reg2, out_reg3(0)); 
 
+	
 
 end architecture;

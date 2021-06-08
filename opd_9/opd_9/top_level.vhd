@@ -67,7 +67,7 @@ architecture a of toplevel is
 begin
 
 
-encoder_comp : encoder port map(inp_a, inp_b, rotation_counter, reset, CLOCK_50); 
+
 
 
 
