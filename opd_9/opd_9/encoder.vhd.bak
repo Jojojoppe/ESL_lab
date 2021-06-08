@@ -1,0 +1,20 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity encoder is
+	port(
+		CLOCK_50 : in std_logic;
+		SIG_A		: in std_logic;
+		SIG_B		: in std_logic;
+		
+		Rotation_counter : out std_logic_vector(15 downto 0);
+		
+	);
+end entity;
+
+architecture a of toplevel is
+
+
+
+end architecture;
