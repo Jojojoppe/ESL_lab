@@ -5,7 +5,7 @@
 #include <gst/app/gstappsrc.h>
 #include <string.h>
 
-static gboolean bus_call (GstBus * bus, GstMessage * msg, gpointer data){
+static gboolean bus_call(GstBus * bus, GstMessage * msg, gpointer data){
   GMainLoop *loop = (GMainLoop *) data;
   switch (GST_MESSAGE_TYPE (msg)) {
     case GST_MESSAGE_EOS:
@@ -28,16 +28,6 @@ static gboolean bus_call (GstBus * bus, GstMessage * msg, gpointer data){
   return TRUE;
 }
 
-static void on_pad_added (GstElement *element, GstPad * pad, gpointer data){
-  GstPad *sinkpad;
-  GstElement *decoder = (GstElement *) data;
-  /* We can now link this pad with the vorbis-decoder sink pad */
-  g_print ("Dynamic pad created, linking demuxer/decoder\n");
-  sinkpad = gst_element_get_static_pad (decoder, "sink");
-  gst_pad_link (pad, sinkpad);
-  gst_object_unref (sinkpad);
-}
-
 static GstFlowReturn on_new_sample_from_sink(GstElement * elt, gpointer data){
 	//GstSample * sample = gst_app_sink_pull_sample(GST_APP_SINK(elt));
 	g_print(".");
@@ -58,8 +48,8 @@ static GstFlowReturn on_new_sample_from_sink(GstElement * elt, gpointer data){
 int main (int argc, char * argv[]){
 	GMainLoop *loop;
 
-	gst_init (&argc, &argv);
-	loop = g_main_loop_new (NULL, FALSE);
+	gst_init(&argc, &argv);
+	loop = g_main_loop_new(NULL, FALSE);
 
 	GstElement * pipeline = gst_pipeline_new ("test-pipeline");
 	g_assert(pipeline);
@@ -67,30 +57,21 @@ int main (int argc, char * argv[]){
 	GstElement * source = gst_element_factory_make("v4l2src", NULL);
 	//GstElement * source = gst_element_factory_make("videotestsrc", NULL);
 	g_assert(source);
-	g_object_set(source, "device", argv[1], NULL);
+	g_object_set(source, "device", argv[1], "do-timestamp", TRUE, "num-buffers", -1, "io-mode", 0, NULL);
 
-	//GstElement * source_caps = gst_element_factory_make ("capsfilter", NULL);
-	//g_assert(source_caps);
-	//g_object_set(source_caps, "caps", gst_caps_new_simple("video/x-raw",
-	//				"format", G_TYPE_STRING, "YUY2",
-	//				"width", G_TYPE_INT, 160,
-	//				"height", G_TYPE_INT, 120,
-	//				"framerate", GST_TYPE_FRACTION, 30, 1,
-	//				"interlace-mode", G_TYPE_STRING, "progressive", 
-	//				NULL), NULL);
+	GstElement * source_caps = gst_element_factory_make ("capsfilter", NULL);
+	g_assert(source_caps);
+	g_object_set(source_caps, "caps", gst_caps_new_simple("video/x-raw",
+					"format", G_TYPE_STRING, "YUY2",
+					"width", G_TYPE_INT, 640,
+					"height", G_TYPE_INT, 480,
+					"framerate", GST_TYPE_FRACTION, 30, 1,
+					NULL), NULL);
 
 	GstElement * sink = gst_element_factory_make("appsink", NULL);
-	//GstElement * sink = gst_element_factory_make("fakesink", NULL);
 	g_assert(sink);
-	g_object_set(sink, "emit-signals",  TRUE, "async", FALSE, NULL);
+	g_object_set(sink, "emit-signals",  TRUE, "sync", TRUE, "drop", TRUE, "max-buffers", -1 ,NULL);
 	g_signal_connect(sink, "new-sample", G_CALLBACK (on_new_sample_from_sink), NULL);
-	g_object_set(sink, "caps", gst_caps_new_simple("video/x-raw",
-					"format", G_TYPE_STRING, "YUY2",
-					"width", G_TYPE_INT, 160,
-					"height", G_TYPE_INT, 120,
-					"framerate", GST_TYPE_FRACTION, 30, 1,
-					"interlace-mode", G_TYPE_STRING, "progressive", 
-					NULL), NULL);
 
 	/* we add a message handler */
 	GstBus * bus = gst_pipeline_get_bus (GST_PIPELINE (pipeline));
@@ -99,13 +80,13 @@ int main (int argc, char * argv[]){
 
 	gst_bin_add_many (GST_BIN (pipeline),
 					source,
-					//source_caps,
+					source_caps,
 				   	sink, 
 	NULL);
 
 	gst_element_link_many(
 					source,
-					//source_caps,
+					source_caps,
 				   	sink, 
 	NULL);
 
