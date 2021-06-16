@@ -1,0 +1,4 @@
+GPMC: 	512 KiB
+
+uart: 14.4 KiB
+
