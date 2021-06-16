@@ -29,8 +29,8 @@ entity setup_control is
     GPMC_nCS6     : in    std_logic;
     GPMC_CLK      : in    std_logic;
 		 
-	 ENC1I			: in 	  std_logic;
-	 ENC2I			: in	  std_logic
+	 ENC4A			: in 	  std_logic;
+	 ENC4B			: in	  std_logic
  
   );
 end setup_control;
@@ -48,7 +48,7 @@ architecture structure of setup_control is
 		);
 		port(
 			clk           : in    std_logic;
-			-- Input (dasetup_control_comp : setup_control port map(CLOCK_50, );
+			-- Input (dasentity setup_control isetup_control_comp : setup_control port map(CLOCK_50, );
 			in_reg0 : in std_logic_vector(DATA_WIDTH - 1 downto 0);
 			in_reg1 : in std_logic_vector(DATA_WIDTH - 1 downto 0);
 
@@ -113,7 +113,7 @@ begin
     );
 	 
 	 
-	 encoder_comp : encoder port map(ENC1I, ENC2I, in_reg0, '0', CLOCK_50, out_reg2, out_reg3(0)); 
+	 encoder_comp : encoder port map(ENC4A, ENC4B, in_reg0, '0', CLOCK_50, out_reg2, out_reg3(0)); 
 
 	
 

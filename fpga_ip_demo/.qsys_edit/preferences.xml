@@ -16,7 +16,7 @@
    <frequency preferredWidth="155" />
   </columns>
  </clocktable>
- <window width="1700" height="1042" x="-9" y="-8" />
+ <window width="859" height="1042" x="1045" y="376" />
  <library expandedCategories="Project,Project/Templates,Library" />
  <generation synthesis="VHDL" />
  <hdlexample language="VERILOG" />

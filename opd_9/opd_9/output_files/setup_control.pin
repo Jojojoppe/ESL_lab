@@ -26,12 +26,12 @@
  -- VCCINT        : Dedicated power pin, which MUST be connected to VCC  (1.2V).
  -- VCCIO         : Dedicated power pin, which MUST be connected to VCC
  --                 of its bank.
- --					Bank 1:		3.3V
+ --					Bank 1:		2.5V
  --					Bank 2:		3.3V
  --					Bank 3:		2.5V
  --					Bank 4:		2.5V
  --					Bank 5:		2.5V
- --					Bank 6:		2.5V
+ --					Bank 6:		3.3V
  --					Bank 7:		2.5V
  --					Bank 8:		2.5V
  -- GND           : Dedicated ground pin. Dedicated GND pins MUST be connected to GND.
@@ -73,16 +73,16 @@ GNDA3                        : 2         : gnd    :                   :         
 VCCA3                        : 3         : power  :                   : 2.5V    :           :                
 VCCINT                       : 4         : power  :                   : 1.2V    :           :                
 GND                          : 5         : gnd    :                   :         :           :                
-ENC1I                        : 6         : input  : 3.3-V LVTTL       :         : 1         : Y              
-VCCIO1                       : 7         : power  :                   : 3.3V    : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : 6         :        :                   :         : 1         :                
+VCCIO1                       : 7         : power  :                   : 2.5V    : 1         :                
 GND                          : 8         : gnd    :                   :         :           :                
-ENC2I                        : 9         : input  : 3.3-V LVTTL       :         : 1         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : 9         :        :                   :         : 1         :                
 VCCINT                       : 10        : power  :                   : 1.2V    :           :                
 GND                          : 11        : gnd    :                   :         :           :                
-~ALTERA_ASDO_DATA1~ / RESERVED_INPUT_WITH_WEAK_PULLUP : 12        : input  : 3.3-V LVTTL       :         : 1         : N              
+~ALTERA_ASDO_DATA1~ / RESERVED_INPUT_WITH_WEAK_PULLUP : 12        : input  : 2.5 V             :         : 1         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : 13        :        :                   :         : 1         :                
-~ALTERA_FLASH_nCE_nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : 14        : input  : 3.3-V LVTTL       :         : 1         : N              
-VCCIO1                       : 15        : power  :                   : 3.3V    : 1         :                
+~ALTERA_FLASH_nCE_nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : 14        : input  : 2.5 V             :         : 1         : N              
+VCCIO1                       : 15        : power  :                   : 2.5V    : 1         :                
 GND                          : 16        : gnd    :                   :         :           :                
 nSTATUS                      : 17        :        :                   :         : 1         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 18        :        :                   :         : 1         :                
@@ -90,8 +90,8 @@ VCCINT                       : 19        : power  :                   : 1.2V    
 GND                          : 20        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 21        :        :                   :         : 1         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 22        :        :                   :         : 1         :                
-~ALTERA_DCLK~                : 23        : output : 3.3-V LVTTL       :         : 1         : N              
-~ALTERA_DATA0~ / RESERVED_INPUT_WITH_WEAK_PULLUP : 24        : input  : 3.3-V LVTTL       :         : 1         : N              
+~ALTERA_DCLK~                : 23        : output : 2.5 V             :         : 1         : N              
+~ALTERA_DATA0~ / RESERVED_INPUT_WITH_WEAK_PULLUP : 24        : input  : 2.5 V             :         : 1         : N              
 nCONFIG                      : 25        :        :                   :         : 1         :                
 TDI                          : 26        : input  :                   :         : 1         :                
 TCK                          : 27        : input  :                   :         : 1         :                
@@ -221,7 +221,7 @@ GND+                         : 150       :        :                   :         
 GND+                         : 151       :        :                   :         : 6         :                
 GND+                         : 152       :        :                   :         : 6         :                
 CONF_DONE                    : 153       :        :                   :         : 6         :                
-VCCIO6                       : 154       : power  :                   : 2.5V    : 6         :                
+VCCIO6                       : 154       : power  :                   : 3.3V    : 6         :                
 MSEL0                        : 155       :        :                   :         : 6         :                
 GND                          : 156       : gnd    :                   :         :           :                
 MSEL1                        : 157       :        :                   :         : 6         :                
@@ -229,7 +229,7 @@ MSEL2                        : 158       :        :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : 159       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 160       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 161       :        :                   :         : 6         :                
-~ALTERA_nCEO~ / RESERVED_OUTPUT_OPEN_DRAIN : 162       : output : 2.5 V             :         : 6         : N              
+~ALTERA_nCEO~ / RESERVED_OUTPUT_OPEN_DRAIN : 162       : output : 3.3-V LVTTL       :         : 6         : N              
 VCCINT                       : 163       : power  :                   : 1.2V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 164       :        :                   :         : 6         :                
 GND                          : 165       : gnd    :                   :         :           :                
@@ -237,14 +237,14 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : 166       :        :                   :      
 VCCINT                       : 167       : power  :                   : 1.2V    :           :                
 GND                          : 168       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 169       :        :                   :         : 6         :                
-VCCIO6                       : 170       : power  :                   : 2.5V    : 6         :                
+VCCIO6                       : 170       : power  :                   : 3.3V    : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 171       :        :                   :         : 6         :                
 GND                          : 172       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 173       :        :                   :         : 6         :                
+ENC4A                        : 173       : input  : 3.3-V LVTTL       :         : 6         : Y              
 VCCINT                       : 174       : power  :                   : 1.2V    :           :                
 GND                          : 175       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 176       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 177       :        :                   :         : 6         :                
+ENC4B                        : 177       : input  : 3.3-V LVTTL       :         : 6         : Y              
 VCCA2                        : 178       : power  :                   : 2.5V    :           :                
 GNDA2                        : 179       : gnd    :                   :         :           :                
 VCCD_PLL2                    : 180       : power  :                   : 1.2V    :           :                

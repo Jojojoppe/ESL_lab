@@ -32,8 +32,8 @@ GPMC_nOE => ramstix_gpmc_driver:gpmc_driver.GPMC_nOE
 GPMC_FPGA_IRQ => ramstix_gpmc_driver:gpmc_driver.GPMC_FPGA_IRQ
 GPMC_nCS6 => ramstix_gpmc_driver:gpmc_driver.GPMC_nCS6
 GPMC_CLK => ramstix_gpmc_driver:gpmc_driver.GPMC_CLK
-ENC1I => encoder:encoder_comp.inp_a
-ENC2I => encoder:encoder_comp.inp_b
+ENC4A => encoder:encoder_comp.inp_a
+ENC4B => encoder:encoder_comp.inp_b
 
 
 |setup_control|ramstix_gpmc_driver:gpmc_driver
