@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -4.498
+TNS   : -1888.006
+
+Type  : Slow 1200mV 85C Model Setup 'FDIV:FDIV_PWM_comp|iclk'
+Slack : -2.248
+TNS   : -15.399
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : -0.152
+TNS   : -0.152
+
+Type  : Slow 1200mV 85C Model Hold 'FDIV:FDIV_PWM_comp|iclk'
+Slack : 0.464
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -913.044
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'FDIV:FDIV_PWM_comp|iclk'
+Slack : -1.487
+TNS   : -20.818
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -4.199
+TNS   : -1731.514
+
+Type  : Slow 1200mV 0C Model Setup 'FDIV:FDIV_PWM_comp|iclk'
+Slack : -1.958
+TNS   : -13.047
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : -0.144
+TNS   : -0.144
+
+Type  : Slow 1200mV 0C Model Hold 'FDIV:FDIV_PWM_comp|iclk'
+Slack : 0.414
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -913.044
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'FDIV:FDIV_PWM_comp|iclk'
+Slack : -1.487
+TNS   : -20.818
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -1.298
+TNS   : -471.745
+
+Type  : Fast 1200mV 0C Model Setup 'FDIV:FDIV_PWM_comp|iclk'
+Slack : -0.390
+TNS   : -0.856
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : -0.174
+TNS   : -0.174
+
+Type  : Fast 1200mV 0C Model Hold 'FDIV:FDIV_PWM_comp|iclk'
+Slack : 0.192
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -797.699
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'FDIV:FDIV_PWM_comp|iclk'
+Slack : -1.000
+TNS   : -14.000
+
+------------------------------------------------------------
