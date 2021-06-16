@@ -1,0 +1,186 @@
+m255
+K3
+13
+cModel Technology
+Z0 d/home/esl22/git/ESL_lab/PWM/simulation/modelsim
+Edutycyclecounter
+Z1 w1622036280
+Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z5 d/home/esl22/git/ESL_lab/PWM/simulation/modelsim
+Z6 8/home/esl22/git/ESL_lab/PWM/DutyCycleCounter.vhd
+Z7 F/home/esl22/git/ESL_lab/PWM/DutyCycleCounter.vhd
+l0
+L5
+VC9mFE1fo6lP79I:G;5Amg0
+Z8 OV;C;10.1d;51
+31
+Z9 !s108 1622036809.233238
+Z10 !s90 -reportprogress|300|-93|-work|work|/home/esl22/git/ESL_lab/PWM/DutyCycleCounter.vhd|
+Z11 !s107 /home/esl22/git/ESL_lab/PWM/DutyCycleCounter.vhd|
+Z12 o-93 -work work -O0
+Z13 tExplicit 1
+!s100 m1TA87=cR]=W1GA6e0g8j0
+!i10b 1
+Aa
+R2
+R3
+R4
+DEx4 work 16 dutycyclecounter 0 22 C9mFE1fo6lP79I:G;5Amg0
+l15
+L13
+V0Q7jb=25aOG9UaFW@oSY^3
+R8
+31
+R9
+R10
+R11
+R12
+R13
+!s100 ^7zhPPBOnYEaIB;1H0PTz0
+!i10b 1
+Efdiv
+Z14 w1622035993
+R3
+R4
+R5
+Z15 8/home/esl22/git/ESL_lab/PWM/FDIV.vhd
+Z16 F/home/esl22/git/ESL_lab/PWM/FDIV.vhd
+l0
+L4
+V;=NDlXHfc3lh=o1Tmb7Nj3
+R8
+31
+Z17 !s108 1622036809.139677
+Z18 !s90 -reportprogress|300|-93|-work|work|/home/esl22/git/ESL_lab/PWM/FDIV.vhd|
+Z19 !s107 /home/esl22/git/ESL_lab/PWM/FDIV.vhd|
+R12
+R13
+!s100 TM`<NKLJ_8]5P[AkcSzUo0
+!i10b 1
+Aa
+R3
+R4
+DEx4 work 4 fdiv 0 22 ;=NDlXHfc3lh=o1Tmb7Nj3
+l19
+L16
+VAeTfYWh`Ek187<S`A:?<F0
+R8
+31
+R17
+R18
+R19
+R12
+R13
+!s100 YSA^]0f_eoCzGb3f6bF:W0
+!i10b 1
+Epwm
+Z20 w1621512114
+R2
+R3
+R4
+R5
+Z21 8/home/esl22/git/ESL_lab/PWM/PWM.vhd
+Z22 F/home/esl22/git/ESL_lab/PWM/PWM.vhd
+l0
+L5
+V6Jao=0MDUc`cn_0QQGSH21
+R8
+31
+Z23 !s108 1622036809.164604
+Z24 !s90 -reportprogress|300|-93|-work|work|/home/esl22/git/ESL_lab/PWM/PWM.vhd|
+Z25 !s107 /home/esl22/git/ESL_lab/PWM/PWM.vhd|
+R12
+R13
+!s100 [[o2AzaP^lNhlM^0NQ5C`3
+!i10b 1
+Astructure
+R2
+R3
+R4
+DEx4 work 3 pwm 0 22 6Jao=0MDUc`cn_0QQGSH21
+l18
+L17
+VcoY]Bl7dhBK:bj5ozm7bA1
+R8
+31
+R23
+R24
+R25
+R12
+R13
+!s100 3CK5eO[hAbD8eL7R[@PM40
+!i10b 1
+Erestbench
+Z26 w1621513000
+R3
+R4
+R5
+Z27 8/home/esl22/git/ESL_lab/PWM/restbench.vhd
+Z28 F/home/esl22/git/ESL_lab/PWM/restbench.vhd
+l0
+L4
+V?SEJdZQ1Kk4^e[R@ELk]=2
+!s100 `hNnXLJNOmO3>>KYO_kAB2
+R8
+31
+!i10b 1
+Z29 !s108 1622036809.331908
+Z30 !s90 -reportprogress|300|-93|-work|work|/home/esl22/git/ESL_lab/PWM/restbench.vhd|
+Z31 !s107 /home/esl22/git/ESL_lab/PWM/restbench.vhd|
+R12
+R13
+Abehaviour
+R3
+R4
+Z32 DEx4 work 9 restbench 0 22 ?SEJdZQ1Kk4^e[R@ELk]=2
+l33
+L12
+Z33 VlmO`:OBz<nOfdST6>C;H^0
+Z34 !s100 l^dEIcoaFcXlRY9Lj[TG01
+R8
+31
+!i10b 1
+R29
+R30
+R31
+R12
+R13
+Etoplevel
+Z35 w1622036797
+R2
+R3
+R4
+R5
+Z36 8/home/esl22/git/ESL_lab/PWM/toplevel.vhd
+Z37 F/home/esl22/git/ESL_lab/PWM/toplevel.vhd
+l0
+L6
+V5INNfddX^MP?P_[WM=lb?3
+R8
+31
+Z38 !s108 1622036809.276796
+Z39 !s90 -reportprogress|300|-93|-work|work|/home/esl22/git/ESL_lab/PWM/toplevel.vhd|
+Z40 !s107 /home/esl22/git/ESL_lab/PWM/toplevel.vhd|
+R12
+R13
+!s100 GN?`M2nS5[nNbg1LN=K`52
+!i10b 1
+Aa
+R2
+R3
+R4
+DEx4 work 8 toplevel 0 22 5INNfddX^MP?P_[WM=lb?3
+l57
+L18
+V[>jHJ1EYi7dNI`A0FOmP<3
+R8
+31
+R38
+R39
+R40
+R12
+R13
+!s100 5:oDBh`e;zIjV2kh3Qk1A2
+!i10b 1

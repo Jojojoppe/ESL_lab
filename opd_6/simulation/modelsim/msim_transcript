@@ -1,0 +1,87 @@
+# do PWM_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying /opt/altera/13.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied /opt/altera/13.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {/home/esl22/git/ESL_lab/PWM/FDIV.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity FDIV
+# -- Compiling architecture a of FDIV
+# vcom -93 -work work {/home/esl22/git/ESL_lab/PWM/PWM.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity PWM
+# -- Compiling architecture structure of PWM
+# vcom -93 -work work {/home/esl22/git/ESL_lab/PWM/restbench.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity restbench
+# -- Compiling architecture behaviour of restbench
+# vcom -93 -work work {/home/esl22/git/ESL_lab/PWM/DutyCycleCounter.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity DutyCycleCounter
+# -- Compiling architecture a of DutyCycleCounter
+# vcom -93 -work work {/home/esl22/git/ESL_lab/PWM/toplevel.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity toplevel
+# -- Compiling architecture a of toplevel
+# 
+# vcom -93 -work work {/home/esl22/git/ESL_lab/PWM/restbench.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity restbench
+# -- Compiling architecture behaviour of restbench
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneive -L rtl_work -L work -voptargs="+acc"  testbench
+# vsim -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneive -L rtl_work -L work -voptargs=\"+acc\" -t 1ps testbench 
+# ** Error: (vsim-3170) Could not find '/home/esl22/git/ESL_lab/PWM/simulation/modelsim/rtl_work.testbench'.
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./PWM_run_msim_rtl_vhdl.do PAUSED at line 16
+vsim work.restbench
+# vsim work.restbench 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.restbench(behaviour)
+# Loading ieee.numeric_std(body)
+# Loading work.toplevel(a)
+# Loading work.fdiv(a)
+# Loading work.dutycyclecounter(a)
+# Loading work.pwm(structure)
+add wave -position end  sim:/restbench/reset
+add wave -position end  sim:/restbench/dutycycle
+add wave -position end  sim:/restbench/dir
+add wave -position end  sim:/restbench/clk
+add wave -position end  sim:/restbench/INB
+add wave -position end  sim:/restbench/INA
+add wave -position end  sim:/restbench/C
+run
+# ** Failure: End
+#    Time: 96 ms  Iteration: 0  Process: /restbench/line__38 File: /home/esl22/git/ESL_lab/PWM/restbench.vhd
+# Break in Process line__38 at /home/esl22/git/ESL_lab/PWM/restbench.vhd line 69
