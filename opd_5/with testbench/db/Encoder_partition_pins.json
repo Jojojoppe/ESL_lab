@@ -1,0 +1,157 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "rotation_counter[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rotation_counter[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rotation_counter[2]",
+					"strict" : false
+				},
+				{
+					"name" : "rotation_counter[3]",
+					"strict" : false
+				},
+				{
+					"name" : "rotation_counter[4]",
+					"strict" : false
+				},
+				{
+					"name" : "rotation_counter[5]",
+					"strict" : false
+				},
+				{
+					"name" : "rotation_counter[6]",
+					"strict" : false
+				},
+				{
+					"name" : "rotation_counter[7]",
+					"strict" : false
+				},
+				{
+					"name" : "rotation_counter[8]",
+					"strict" : false
+				},
+				{
+					"name" : "rotation_counter[9]",
+					"strict" : false
+				},
+				{
+					"name" : "rotation_counter[10]",
+					"strict" : false
+				},
+				{
+					"name" : "rotation_counter[11]",
+					"strict" : false
+				},
+				{
+					"name" : "rotation_counter[12]",
+					"strict" : false
+				},
+				{
+					"name" : "rotation_counter[13]",
+					"strict" : false
+				},
+				{
+					"name" : "rotation_counter[14]",
+					"strict" : false
+				},
+				{
+					"name" : "rotation_counter[15]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "data_in[0]",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "data_write",
+					"strict" : false
+				},
+				{
+					"name" : "inp_a",
+					"strict" : false
+				},
+				{
+					"name" : "inp_b",
+					"strict" : false
+				},
+				{
+					"name" : "data_in[1]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in[2]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in[3]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in[4]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in[5]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in[6]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in[7]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in[8]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in[9]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in[10]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in[11]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in[12]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in[13]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in[14]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in[15]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
