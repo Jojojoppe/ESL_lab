@@ -1,0 +1,11 @@
+set_location_assignment PIN_R8 -to CLOCK_50
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK_50
+
+set_location_assignment PIN_J15 -to RESET
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to RESET
+
+set_location_assignment PIN_C9 -to Urx
+set_location_assignment PIN_D9 -to Utx
+
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Urx
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Utx

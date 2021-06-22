@@ -22,7 +22,7 @@ entity setup_control is
 
     -- GPMC sidesetup_control_comp : setup_control port map(CLOCK_50, );
 
-    GPMC_DATA     : inout std_logic_vector(DATA_WIDTH - 1 downto 0);
+    GPMC_DATA entity setup_control is    : inout std_logic_vector(DATA_WIDTH - 1 downto 0);
     GPMC_ADDR     : in    std_logic_vector(GPMC_ADDR_WIDTH_HIGH downto GPMC_ADDR_WIDTH_LOW);
     GPMC_nPWE     : in    std_logic;
     GPMC_nOE      : in    std_logic;
