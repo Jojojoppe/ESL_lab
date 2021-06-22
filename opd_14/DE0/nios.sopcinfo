@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="nios" kind="nios" version="1.0" fabric="QSYS">
  <!-- Format version 13.1 162 (Future versions may contain additional information.) -->
- <!-- 2021.06.22.13:12:20 -->
+ <!-- 2021.06.22.14:14:37 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1624360340</value>
+  <value>1624364077</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -1564,7 +1564,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="instSlaveMapParam">
    <type>java.lang.String</type>
-   <value><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x8000' end='0xD000' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x10800' end='0x11000' /></address-map>]]></value>
+   <value><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x8000' end='0x10000' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x10800' end='0x11000' /></address-map>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -1572,7 +1572,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="dataSlaveMapParam">
    <type>java.lang.String</type>
-   <value><![CDATA[<address-map><slave name='esl_encoder_0.s0' start='0x0' end='0x400' /><slave name='esl_encoder_1.s0' start='0x400' end='0x800' /><slave name='esl_pwm_0.s0' start='0x1000' end='0x1400' /><slave name='esl_pwm_1.s0' start='0x1400' end='0x1800' /><slave name='onchip_memory2_0.s1' start='0x8000' end='0xD000' /><slave name='uart_0.s1' start='0x10000' end='0x10020' /><slave name='sysid_qsys_0.control_slave' start='0x10030' end='0x10038' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x10800' end='0x11000' /><slave name='timer_0.s1' start='0x11000' end='0x11020' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x11038' end='0x11040' /></address-map>]]></value>
+   <value><![CDATA[<address-map><slave name='esl_encoder_0.s0' start='0x0' end='0x400' /><slave name='esl_encoder_1.s0' start='0x400' end='0x800' /><slave name='esl_pwm_0.s0' start='0x1000' end='0x1400' /><slave name='esl_pwm_1.s0' start='0x1400' end='0x1800' /><slave name='onchip_memory2_0.s1' start='0x8000' end='0x10000' /><slave name='uart_0.s1' start='0x10000' end='0x10020' /><slave name='sysid_qsys_0.control_slave' start='0x10030' end='0x10038' /><slave name='nios2_qsys_0.jtag_debug_module' start='0x10800' end='0x11000' /><slave name='timer_0.s1' start='0x11000' end='0x11020' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x11038' end='0x11040' /></address-map>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -2138,7 +2138,7 @@ parameters are a RESULT of the module parameters. -->
     <slaveName>s1</slaveName>
     <name>onchip_memory2_0.s1</name>
     <baseAddress>32768</baseAddress>
-    <span>20480</span>
+    <span>32768</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
@@ -2511,7 +2511,7 @@ parameters are a RESULT of the module parameters. -->
     <slaveName>s1</slaveName>
     <name>onchip_memory2_0.s1</name>
     <baseAddress>32768</baseAddress>
-    <span>20480</span>
+    <span>32768</span>
    </memoryBlock>
   </interface>
   <interface name="d_irq" kind="interrupt_receiver" version="13.1">
@@ -3190,7 +3190,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.SIZE_VALUE</name>
-   <value>20480</value>
+   <value>32768</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.WRITABLE</name>
@@ -3290,7 +3290,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="memorySize">
    <type>long</type>
-   <value>20480</value>
+   <value>32768</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -3531,7 +3531,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="addressSpan">
     <type>java.math.BigInteger</type>
-    <value>20480</value>
+    <value>32768</value>
     <derived>true</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -3611,7 +3611,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="explicitAddressSpan">
     <type>java.math.BigInteger</type>
-    <value>20480</value>
+    <value>32768</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>
@@ -4623,7 +4623,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1624360340</value>
+   <value>1624364077</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -4643,7 +4643,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1624360340</value>
+   <value>1624364077</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -4659,7 +4659,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1624360340</value>
+   <value>1624364077</value>
    <derived>false</derived>
    <enabled>false</enabled>
    <visible>false</visible>

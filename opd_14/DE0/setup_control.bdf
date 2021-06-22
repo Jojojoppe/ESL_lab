@@ -85,6 +85,7 @@ applicable agreement for further details.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 149 16)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 312 344 368 360))
 )
 (pin
 	(input)
@@ -101,6 +102,7 @@ applicable agreement for further details.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 149 16)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 312 384 368 400))
 )
 (pin
 	(input)
@@ -117,6 +119,7 @@ applicable agreement for further details.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 149 16)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 312 424 368 440))
 )
 (pin
 	(input)
@@ -133,6 +136,7 @@ applicable agreement for further details.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 149 16)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 312 464 368 480))
 )
 (pin
 	(output)
@@ -168,6 +172,7 @@ applicable agreement for further details.
 		(line (pt 98 12)(pt 94 8))
 	)
 	(flipy)
+	(annotation_block (location)(rect 312 600 368 616))
 )
 (pin
 	(output)
@@ -185,6 +190,7 @@ applicable agreement for further details.
 		(line (pt 98 12)(pt 94 8))
 	)
 	(flipy)
+	(annotation_block (location)(rect 312 672 368 688))
 )
 (pin
 	(bidir)
@@ -203,6 +209,7 @@ applicable agreement for further details.
 	)
 	(flipy)
 	(text "VCC" (rect 151 7 172 16)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 312 568 368 584))
 )
 (pin
 	(bidir)
@@ -221,6 +228,7 @@ applicable agreement for further details.
 	)
 	(flipy)
 	(text "VCC" (rect 151 7 172 16)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 312 584 368 600))
 )
 (pin
 	(bidir)
@@ -239,6 +247,7 @@ applicable agreement for further details.
 	)
 	(flipy)
 	(text "VCC" (rect 151 7 172 16)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 312 640 368 656))
 )
 (pin
 	(bidir)
@@ -257,6 +266,7 @@ applicable agreement for further details.
 	)
 	(flipy)
 	(text "VCC" (rect 151 7 172 16)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 312 656 368 672))
 )
 (symbol
 	(rect 600 128 1016 712)
