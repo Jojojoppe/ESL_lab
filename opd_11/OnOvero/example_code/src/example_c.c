@@ -7,14 +7,33 @@
 #include "stdio.h"
 #include "gpmc_driver_c.h"
 
+#include "xxmodel.h"
+
 #include <fcntl.h>      // open()
 #include <unistd.h>     // close()
+#include <math.h>
 
-int main(int argc, char* argv[])
-{
+double readEncoderA(int fd){
+	const int pulsePerRotation = 2000;
+	int location = (int)getGMPCValue(fd, 1);
+	double d = (float)location/(float)pulsePerRotation;
+	return (float)2*M_PI*d;
+}
+
+void setPWMA(int fd, double out){
+	int i = (int)(out*256.0);
+	int dir = 0;
+	if(i<0.0){
+		dir = 1;
+		i = -1*i;
+	}
+
+	setGPMCValue(fd, i&0xff | dir<<8, 2);
+}
+
+int main(int argc, char* argv[]){
   int fd; // File descriptor.
-  if (2 != argc)
-  {
+  if (2 != argc){
     //printf("Usage: %s <device_name>\n", argv[0]);
     return 1;
   }
@@ -24,23 +43,29 @@ int main(int argc, char* argv[])
   // open connection to device.
   //printf("Opening gpmc_fpga...\n");
   fd = open(argv[1], 0);
-  if (0 > fd)
-  {
+  if (0 > fd){
     //printf("Error, could not open device: %s.\n", argv[1]);
     return 1;
   }
   
-  	setGPMCValue(fd, 0x20, 2);
-  	setGPMCValue(fd, 0x20, 3);
+	XXModelInitialize();
+	XXCalculateInitial();
+
+	double setpoint = 0.0;
+	double input = readEncoderA(fd);
+
+	setPWMA(fd, 0.0);
 
 	// keep reading
 	while(1){
-		unsigned short v = getGPMCValue(fd, 0);
-		printf("Encoder value A: %d\r\n", v);
-		v = getGPMCValue(fd, 1);
-		printf("Encoder value B: %d\r\n", v);
-		int i;
-		for(i=0; i<0x100000; i++);
+		input = readEncoderA(fd);
+		xx_V[8] = input;
+		xx_V[7] = setpoint;
+
+		XXCalculateDynamic();
+		XXCalculateOutput();
+
+		setPWMA(fd, xx_V[9]);
 	}
 
 

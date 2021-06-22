@@ -14,25 +14,28 @@ architecture behaviour of restbench is
 		port(
 			INA 			: inout std_logic;
 			INB 			: inout std_logic;
-			C				: out std_logic;
+			GPIO_0			: inout std_logic_vector(33 downto 0);
 			duty_cycle 	: in std_logic_vector(7 downto 0);
 			direction 	: in std_logic;
-			clk			: in std_logic;
-			reset 		: in std_logic
+			CLOCK_50	: in std_logic;
+			KEY 		: in std_logic_vector(1 downto 0)
 			);
 	end component;
-	
-	
 	
 	signal dutycycle 	: std_logic_vector(7 downto 0) := (others => '0');
 	signal dir			: std_logic := '1';
 	signal clk			: std_logic := '0';
 	signal reset		: std_logic := '1';
 	
-	
+	signal Ci			: std_logic_vector(33 downto 0);
+	signal KEYi			: std_logic_vector(1 downto 0);
+
 begin
 
-	pulse:toplevel port map(INA, INB, C, dutycycle, dir, clk, reset);
+	C <= Ci(21);
+	KEYi(0) <= not reset;
+
+	pulse:toplevel port map(INA, INB, Ci, dutycycle, dir, clk, KEYi);
 	clk <= NOT clk after 20 ns;
 	process
 	begin
