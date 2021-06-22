@@ -1,0 +1,2 @@
+#!/bin/sh
+cat test.jpg | ssh joppe@130.89.81.112 "cat > test.jpg"
